@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Livraria pessoal</string>
+    <string name="texto_main">Gerenciamento de Livros</string>
+    <string name="texto_btn_main_livros">Navegar para livros</string>
+    <string name="texto_btn_main_autores">Navegar para autores</string>
+    <string name="texto_criar_autor">Criar autor</string>
+    <string name="texto_atualizar_autor">Atualizar autor</string>
+    <string name="texto_deletar_autor">Deletar autor</string>
+    <string name="texto_listar_autor">Listar autores</string>
+    <string name="texto_buscar_autor">Buscar autor</string>
+    <string name="texto_nome_autor">Nome do autor</string>
+    <string name="texto_id_autor">ID do autor</string>
+    <string name="texto_dados_autor">Dados do autor</string>
+    <string name="texto_nacionalidade_autor">Nacionalidade do autor</string>
+    <string name="texto_criar_livro">Criar livro</string>
+    <string name="texto_atualizar_livro">Atualizar livro</string>
+    <string name="texto_deletar_livro">Deletar livro</string>
+    <string name="texto_listar_livro">Listar livros</string>
+    <string name="texto_buscar_livro">Buscar livro</string>
+    <string name="texto_id_livro">ID do livro</string>
+    <string name="texto_nome_livro">Nome do livro</string>
+    <string name="texto_dados_livro">Dados do livro</string>
+    <string name="texto_btn_criar">Criar</string>
+    <string name="texto_btn_atualizar">Atualizar</string>
+    <string name="texto_btn_deletar">Deletar</string>
+    <string name="texto_btn_listar">Listar</string>
+    <string name="texto_btn_buscar">Buscar</string>
+    <string name="qtd_livros">Quantidade de livros:</string>
+    <string name="qtd_autores">Quantidade de autores:</string>
+</resources>
