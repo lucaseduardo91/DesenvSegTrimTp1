@@ -75,7 +75,7 @@
         app:layout_constraintVertical_bias="0.23000002" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_deletar_autor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"

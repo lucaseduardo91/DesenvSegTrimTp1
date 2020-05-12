@@ -52,37 +52,11 @@
         app:layout_constraintVertical_bias="0.060000002">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nome_autor_atlz_livro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/texto_id_autor" />
+            android:hint="@string/texto_nome_autor" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="@string/texto_nome_autor"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
-        app:layout_constraintVertical_bias="0.07999998" />
-
-    <TextView
-        android:id="@+id/nome_autor_no_livro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="@string/texto_nome_autor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.23"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.01999998" />
 
     <Button
         android:id="@+id/btn_atlz_livro"
@@ -96,7 +70,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nome_autor_no_livro"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
         app:layout_constraintVertical_bias="0.19999999" />
 
     <Button

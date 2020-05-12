@@ -29,11 +29,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_criar_autor"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/text_criar_livro"
+        app:layout_constraintVertical_bias="0.060000002">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_nome_livro"
+            android:id="@+id/input_nome_autor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/texto_nome_autor" />
@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_id_autor_livro"
+            android:id="@+id/input_nacionalidade_autor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/texto_nacionalidade_autor" />

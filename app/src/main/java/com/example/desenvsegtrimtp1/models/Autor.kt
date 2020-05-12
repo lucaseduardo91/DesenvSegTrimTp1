@@ -6,6 +6,6 @@ import androidx.room.PrimaryKey
 @Entity
 data class Autor (
     @PrimaryKey(autoGenerate = true) val id: Int? = null,
-    val nome: String,
-    val nacionalidade: String
+    var nome: String,
+    var nacionalidade: String
 )
