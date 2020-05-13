@@ -14,7 +14,7 @@ class AutorActivity : AppCompatActivity() {
         btn_criar_autor.setOnClickListener {
             CriarAutorNoBanco()
         }
-        
+
     }
 
     fun CriarAutorNoBanco()
