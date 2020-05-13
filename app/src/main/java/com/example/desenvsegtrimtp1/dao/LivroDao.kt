@@ -2,6 +2,7 @@ package com.example.desenvsegtrimtp1.dao
 
 import androidx.room.*
 import com.example.desenvsegtrimtp1.models.Livro
+import com.example.desenvsegtrimtp1.models.LivroComAutor
 
 @Dao
 interface LivroDao {
@@ -19,4 +20,7 @@ interface LivroDao {
 
     @Query("SELECT * FROM livro WHERE id = :id")
     fun show(id : Int) : Livro
+
+    @Query("SELECT * FROM livro")
+    fun livrosComAutores() : Array<LivroComAutor>
 }
