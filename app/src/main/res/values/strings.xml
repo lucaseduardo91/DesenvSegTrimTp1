@@ -27,4 +27,5 @@
     <string name="texto_btn_buscar">Buscar</string>
     <string name="qtd_livros">Quantidade de livros:</string>
     <string name="qtd_autores">Quantidade de autores:</string>
+    <string name="btn_voltar_principal">Voltar para o início</string>
 </resources>

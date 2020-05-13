@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_nome_autor"
+            android:id="@+id/input_nome_livro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/texto_nome_livro" />
@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_nacionalidade_autor"
+            android:id="@+id/input_autor_criar_livro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/texto_nome_autor" />
