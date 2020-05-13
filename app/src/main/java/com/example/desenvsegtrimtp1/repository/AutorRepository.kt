@@ -21,8 +21,8 @@ class AutorRepository {
             LivrariaDatabase.getInstance(contexto).autorDao().insert(autor)
         }
 
-        fun deletarAutor(autor: Autor){
-            LivrariaDatabase.getInstance(contexto).autorDao().delete(autor)
+        fun deletarAutor(id: Int){
+            LivrariaDatabase.getInstance(contexto).autorDao().delete(id)
         }
 
         fun atualizarAutor(autor: Autor){
@@ -35,6 +35,10 @@ class AutorRepository {
 
         fun detalharAutor(id : Int) : Autor {
             return LivrariaDatabase.getInstance(contexto).autorDao().show(id)
+        }
+
+        fun buscarPeloNome(nome : String) : Autor{
+            return LivrariaDatabase.getInstance(contexto).autorDao().search(nome)
         }
 
     }

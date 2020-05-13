@@ -11,15 +11,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.desenvsegtrimtp1.AtualizarLivroActivity
 import com.example.desenvsegtrimtp1.R
 import com.example.desenvsegtrimtp1.models.Livro
+import com.example.desenvsegtrimtp1.models.LivroComAutor
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.item_livro.view.*
 
-class LivroAdapter (livros : List<Livro>, activity : Activity) :
+class LivroAdapter (livros : List<LivroComAutor>, activity : Activity) :
     RecyclerView.Adapter<LivroAdapter.LivroViewHolder>(){
     var listaLivros = livros
     var activityPrincipal = activity
 
-    class LivroViewHolder(itemView: View, activity: Activity, listaLivros : List<Livro>) : RecyclerView.ViewHolder(itemView){
+    class LivroViewHolder(itemView: View, activity: Activity, listaLivros : List<LivroComAutor>) : RecyclerView.ViewHolder(itemView){
 
         var nomeLivro = itemView.findViewById<TextView>(R.id.lst_nome_livro)
         var nomeAutor = itemView.findViewById<TextView>(R.id.lst_autor_livro)
@@ -46,7 +47,7 @@ class LivroAdapter (livros : List<Livro>, activity : Activity) :
 
     override fun onBindViewHolder(holder: LivroViewHolder, position: Int) {
 
-        holder.nomeAutor.text = listaLivros[position].autor
-        holder.nomeLivro.text = listaLivros[position].titulo
+        holder.nomeAutor.text = listaLivros[position].autor.nome
+        holder.nomeLivro.text = listaLivros[position].livro.titulo
     }
 }

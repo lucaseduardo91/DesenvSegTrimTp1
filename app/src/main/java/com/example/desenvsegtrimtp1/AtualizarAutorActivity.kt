@@ -2,7 +2,9 @@ package com.example.desenvsegtrimtp1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.desenvsegtrimtp1.models.Autor
+import com.example.desenvsegtrimtp1.repository.AutorRepository
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_atualizar_autor.*
 
@@ -19,21 +21,28 @@ class AtualizarAutorActivity : AppCompatActivity() {
         nacionalidade_atlz.setText(autor.nacionalidade)
 
         btn_atlz_autor.setOnClickListener {
-            AtualizarAutorNoBanco(autor)
+            atualizarAutorNoBanco(autor.id!!)
         }
 
         btn_deletar_autor.setOnClickListener {
-            DeletarAutorNoBanco(autor)
+            deletarAutorNoBanco(autor)
         }
     }
 
-    fun AtualizarAutorNoBanco(autor: Autor)
+    fun atualizarAutorNoBanco(autorId: Int)
     {
+        if(!nome_autor_atlz.toString().isNullOrBlank() && !nacionalidade_atlz.toString().isNullOrBlank())
+        {
+            var autor = Autor(autorId,nome_autor_atlz.toString(),nacionalidade_atlz.toString())
+            AutorRepository.atualizarAutor(autor)
+        }
+        else
+            Toast.makeText(this,"Preencha corretamente todos os campos!", Toast.LENGTH_LONG).show()
 
     }
 
-    fun DeletarAutorNoBanco(autor: Autor)
+    fun deletarAutorNoBanco(autor: Autor)
     {
-
+        AutorRepository.deletarAutor(autor.id!!)
     }
 }

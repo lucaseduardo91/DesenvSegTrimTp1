@@ -11,12 +11,15 @@ interface AutorDao {
     @Update
     fun update(vararg autor: Autor)
 
-    @Delete
-    fun delete(vararg autor: Autor)
+    @Query("DELETE FROM autor WHERE id = :id")
+    fun delete(vararg id: Int)
 
     @Query("SELECT * FROM autor")
     fun all() : Array<Autor>
 
     @Query("SELECT * FROM autor WHERE id = :id")
     fun show(id : Int) : Autor
+
+    @Query("SELECT * FROM autor WHERE nome = :nome")
+    fun search(nome : String) : Autor
 }

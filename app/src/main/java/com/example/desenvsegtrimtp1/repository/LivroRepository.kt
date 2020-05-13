@@ -22,8 +22,8 @@ class LivroRepository {
             LivrariaDatabase.getInstance(contexto).livroDao().insert(livro)
         }
 
-        fun deletarLivro(livro: Livro){
-            LivrariaDatabase.getInstance(contexto).livroDao().delete(livro)
+        fun deletarLivro(id : Int){
+            LivrariaDatabase.getInstance(contexto).livroDao().delete(id)
         }
 
         fun atualizarLivro(livro: Livro){

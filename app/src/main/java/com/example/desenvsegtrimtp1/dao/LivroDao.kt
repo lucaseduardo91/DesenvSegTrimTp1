@@ -12,8 +12,8 @@ interface LivroDao {
     @Update
     fun update(vararg livro: Livro)
 
-    @Delete
-    fun delete(vararg livro: Livro)
+    @Query("DELETE FROM livro WHERE id = :id")
+    fun delete(vararg id: Int)
 
     @Query("SELECT * FROM livro")
     fun all() : Array<Livro>
