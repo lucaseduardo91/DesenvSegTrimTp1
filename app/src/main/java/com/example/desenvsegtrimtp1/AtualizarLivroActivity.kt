@@ -36,13 +36,13 @@ class AtualizarLivroActivity : AppCompatActivity() {
     {
         if(!nome_autor_atlz_livro.text.toString().isNullOrBlank())
         {
-            var autor = AutorRepository.buscarPeloNome(nome_autor_atlz_livro.text.toString())
+            var autor = AutorRepository.getInstance(this.applicationContext).buscarPeloNome(nome_autor_atlz_livro.text.toString())
             if(autor != null)
             {
                 if(!input_atlz_nome_livro.text.toString().isNullOrBlank())
                 {
                     var livro = Livro(null,input_atlz_nome_livro.text.toString(),autor.id!!)
-                    LivroRepository.atualizarLivro(livro)
+                    LivroRepository.getInstance(this.applicationContext).atualizarLivro(livro)
 
                     var intent = Intent(this,ListaLivrosActivity::class.java)
                     startActivity(intent)
@@ -67,7 +67,7 @@ class AtualizarLivroActivity : AppCompatActivity() {
 
     fun deletarLivroNoBanco(livroComAutor: LivroComAutor)
     {
-        LivroRepository.deletarLivro(livroComAutor.livro.id)
+        LivroRepository.getInstance(this.applicationContext).deletarLivro(livroComAutor.livro.id!!)
 
         var intent = Intent(this,ListaLivrosActivity::class.java)
         startActivity(intent)

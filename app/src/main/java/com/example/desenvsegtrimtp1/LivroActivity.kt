@@ -20,7 +20,7 @@ class LivroActivity : AppCompatActivity() {
         }
 
         btn_listar_livros.setOnClickListener {
-            if(LivroRepository.listarLivros().isNullOrEmpty())
+            if(LivroRepository.getInstance(this.applicationContext).listarLivros().isNullOrEmpty())
                 Toast.makeText(this,"Nenhum livro cadastrado. Crie pelo menos um!", Toast.LENGTH_LONG).show()
             else
             {
@@ -34,11 +34,11 @@ class LivroActivity : AppCompatActivity() {
     {
         if(!input_nome_livro.toString().isNullOrBlank() && !input_autor_criar_livro.toString().isNullOrBlank())
         {
-            var autor = AutorRepository.buscarPeloNome(input_autor_criar_livro.toString())
+            var autor = AutorRepository.getInstance(this.applicationContext).buscarPeloNome(input_autor_criar_livro.toString())
             if(autor != null)
             {
                 var livro = Livro(null,input_nome_livro.toString(),autor.id!!)
-                LivroRepository.inserirLivro(livro)
+                LivroRepository.getInstance(this.applicationContext).inserirLivro(livro)
 
                 Toast.makeText(this,"Autor inserido!", Toast.LENGTH_LONG).show()
 

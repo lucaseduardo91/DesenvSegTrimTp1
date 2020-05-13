@@ -34,7 +34,7 @@ class AtualizarAutorActivity : AppCompatActivity() {
         if(!nome_autor_atlz.toString().isNullOrBlank() && !nacionalidade_atlz.toString().isNullOrBlank())
         {
             var autor = Autor(autorId,nome_autor_atlz.toString(),nacionalidade_atlz.toString())
-            AutorRepository.atualizarAutor(autor)
+            AutorRepository.getInstance(this.applicationContext).atualizarAutor(autor)
         }
         else
             Toast.makeText(this,"Preencha corretamente todos os campos!", Toast.LENGTH_LONG).show()
@@ -43,6 +43,6 @@ class AtualizarAutorActivity : AppCompatActivity() {
 
     fun deletarAutorNoBanco(autor: Autor)
     {
-        AutorRepository.deletarAutor(autor.id!!)
+        AutorRepository.getInstance(this.applicationContext).deletarAutor(autor.id!!)
     }
 }

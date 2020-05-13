@@ -17,29 +17,29 @@ class AutorRepository {
             return repository as AutorRepository
         }
 
-        fun inserirAutor(autor: Autor){
-            LivrariaDatabase.getInstance(contexto).autorDao().insert(autor)
-        }
+    }
 
-        fun deletarAutor(id: Int){
-            LivrariaDatabase.getInstance(contexto).autorDao().delete(id)
-        }
+    fun inserirAutor(autor: Autor){
+        LivrariaDatabase.getInstance(contexto).autorDao().insert(autor)
+    }
 
-        fun atualizarAutor(autor: Autor){
-            LivrariaDatabase.getInstance(contexto).autorDao().update(autor)
-        }
+    fun deletarAutor(id: Int){
+        LivrariaDatabase.getInstance(contexto).autorDao().delete(id)
+    }
 
-        fun listarAutores() : Array<Autor>{
-            return LivrariaDatabase.getInstance(contexto).autorDao().all()
-        }
+    fun atualizarAutor(autor: Autor){
+        LivrariaDatabase.getInstance(contexto).autorDao().update(autor)
+    }
 
-        fun detalharAutor(id : Int) : Autor {
-            return LivrariaDatabase.getInstance(contexto).autorDao().show(id)
-        }
+    fun listarAutores() : Array<Autor>{
+        return LivrariaDatabase.getInstance(contexto).autorDao().all()
+    }
 
-        fun buscarPeloNome(nome : String) : Autor{
-            return LivrariaDatabase.getInstance(contexto).autorDao().search(nome)
-        }
+    fun detalharAutor(id : Int) : Autor {
+        return LivrariaDatabase.getInstance(contexto).autorDao().show(id)
+    }
 
+    fun buscarPeloNome(nome : String) : Autor?{
+        return LivrariaDatabase.getInstance(contexto).autorDao().search(nome)
     }
 }

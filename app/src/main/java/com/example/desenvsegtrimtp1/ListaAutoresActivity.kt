@@ -24,6 +24,6 @@ class ListaAutoresActivity : AppCompatActivity() {
 
     fun configurarRecyclerView(){
         listagem_autores.layoutManager = LinearLayoutManager(this)
-        listagem_autores.adapter = AutorAdapter(AutorRepository.listarAutores().toList(),this)
+        listagem_autores.adapter = AutorAdapter(AutorRepository.getInstance(this.applicationContext).listarAutores().toList(),this)
     }
 }

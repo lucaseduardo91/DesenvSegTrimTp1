@@ -14,12 +14,12 @@ class AutorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_autor)
 
-        btn_criar_autor.setOnClickListener {
+        btn_criar_autor!!.setOnClickListener {
             criarAutorNoBanco()
         }
 
-        btn_listar_autores.setOnClickListener {
-            if(AutorRepository.listarAutores().isNullOrEmpty())
+        btn_listar_autores!!.setOnClickListener {
+            if(AutorRepository.getInstance(this.applicationContext).listarAutores().isNullOrEmpty())
                 Toast.makeText(this,"Nenhum autor cadastrado. Crie pelo menos um!", Toast.LENGTH_LONG).show()
             else
             {
@@ -34,7 +34,7 @@ class AutorActivity : AppCompatActivity() {
         if(!input_nome_autor.text.toString().isNullOrBlank() && !input_nacionalidade_autor.text.toString().isNullOrBlank())
         {
             var autor : Autor = Autor(null,input_nome_autor.text.toString(),input_nacionalidade_autor.text.toString())
-            AutorRepository.inserirAutor(autor)
+            AutorRepository.getInstance(this.applicationContext).inserirAutor(autor)
             Toast.makeText(this,"Autor inserido!", Toast.LENGTH_LONG).show()
 
             var intent = Intent(this,ListaAutoresActivity::class.java)

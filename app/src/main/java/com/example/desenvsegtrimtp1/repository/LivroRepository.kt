@@ -18,30 +18,30 @@ class LivroRepository {
             return repository as LivroRepository
         }
 
-        fun inserirLivro(livro: Livro){
-            LivrariaDatabase.getInstance(contexto).livroDao().insert(livro)
-        }
+    }
 
-        fun deletarLivro(id : Int){
-            LivrariaDatabase.getInstance(contexto).livroDao().delete(id)
-        }
+    fun inserirLivro(livro: Livro){
+        LivrariaDatabase.getInstance(contexto).livroDao().insert(livro)
+    }
 
-        fun atualizarLivro(livro: Livro){
-            LivrariaDatabase.getInstance(contexto).livroDao().update(livro)
-        }
+    fun deletarLivro(id : Int){
+        LivrariaDatabase.getInstance(contexto).livroDao().delete(id)
+    }
 
-        fun listarLivros() : Array<Livro>{
-            return LivrariaDatabase.getInstance(contexto).livroDao().all()
-        }
+    fun atualizarLivro(livro: Livro){
+        LivrariaDatabase.getInstance(contexto).livroDao().update(livro)
+    }
 
-        fun detalharLivro(id : Int) : Livro{
-            return LivrariaDatabase.getInstance(contexto).livroDao().show(id)
-        }
+    fun listarLivros() : Array<Livro>{
+        return LivrariaDatabase.getInstance(contexto).livroDao().all()
+    }
 
-        fun listarLivrosComAutores() : Array<LivroComAutor>{
-            return LivrariaDatabase.getInstance(contexto).livroDao().livrosComAutores()
-        }
+    fun detalharLivro(id : Int) : Livro{
+        return LivrariaDatabase.getInstance(contexto).livroDao().show(id)
+    }
 
+    fun listarLivrosComAutores() : Array<LivroComAutor>{
+        return LivrariaDatabase.getInstance(contexto).livroDao().livrosComAutores()
     }
 
 }

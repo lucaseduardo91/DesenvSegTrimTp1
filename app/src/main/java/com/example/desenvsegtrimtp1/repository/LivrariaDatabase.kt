@@ -8,6 +8,7 @@ import com.example.desenvsegtrimtp1.dao.AutorDao
 import com.example.desenvsegtrimtp1.dao.LivroDao
 import com.example.desenvsegtrimtp1.models.Autor
 import com.example.desenvsegtrimtp1.models.Livro
+import com.example.desenvsegtrimtp1.models.LivroComAutor
 
 @Database(
     entities = arrayOf(Autor::class,Livro::class),

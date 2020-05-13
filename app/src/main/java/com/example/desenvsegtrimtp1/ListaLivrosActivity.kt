@@ -24,6 +24,6 @@ class ListaLivrosActivity : AppCompatActivity() {
 
     fun configurarRecyclerView(){
         listagem_livros.layoutManager = LinearLayoutManager(this)
-        listagem_livros.adapter = LivroAdapter(LivroRepository.listarLivrosComAutores().toList(),this)
+        listagem_livros.adapter = LivroAdapter(LivroRepository.getInstance(this.applicationContext).listarLivrosComAutores().toList(),this)
     }
 }
