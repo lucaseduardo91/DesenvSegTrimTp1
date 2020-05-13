@@ -21,6 +21,6 @@ interface LivroDao {
     @Query("SELECT * FROM livro WHERE id = :id")
     fun show(id : Int) : Livro
 
-    @Query("SELECT * FROM livro,autor")
+    @Query("SELECT * FROM livro,autor WHERE livro.autorId = autor.id")
     fun livrosComAutores() : Array<LivroComAutor>
 }

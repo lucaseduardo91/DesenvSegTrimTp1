@@ -18,13 +18,13 @@ class AtualizarLivroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_atualizar_livro)
 
         var livroTexto = intent.getStringExtra("livro")
-        var livro = Gson().fromJson<LivroComAutor>(livroTexto,Livro::class.java)
+        var livro = Gson().fromJson<LivroComAutor>(livroTexto,LivroComAutor::class.java)
 
         input_atlz_nome_livro.setText(livro.livro.titulo)
         nome_autor_atlz_livro.setText(livro.autor.nome)
 
         btn_atlz_livro.setOnClickListener {
-            atualizarLivroNoBanco()
+            atualizarLivroNoBanco(livro.livro.id!!)
         }
 
         btn_deletar_livro.setOnClickListener {
@@ -32,7 +32,7 @@ class AtualizarLivroActivity : AppCompatActivity() {
         }
     }
 
-    fun atualizarLivroNoBanco()
+    fun atualizarLivroNoBanco(livroId : Int)
     {
         if(!nome_autor_atlz_livro.text.toString().isNullOrBlank())
         {
@@ -41,7 +41,7 @@ class AtualizarLivroActivity : AppCompatActivity() {
             {
                 if(!input_atlz_nome_livro.text.toString().isNullOrBlank())
                 {
-                    var livro = Livro(null,input_atlz_nome_livro.text.toString(),autor.id!!)
+                    var livro = Livro(livroId,input_atlz_nome_livro.text.toString(),autor.id!!)
                     LivroRepository.getInstance(this.applicationContext).atualizarLivro(livro)
 
                     var intent = Intent(this,ListaLivrosActivity::class.java)
@@ -69,7 +69,7 @@ class AtualizarLivroActivity : AppCompatActivity() {
     {
         LivroRepository.getInstance(this.applicationContext).deletarLivro(livroComAutor.livro.id!!)
 
-        var intent = Intent(this,ListaLivrosActivity::class.java)
+        var intent = Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
 }

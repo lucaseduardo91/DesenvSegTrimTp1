@@ -14,6 +14,9 @@ interface AutorDao {
     @Query("DELETE FROM autor WHERE id = :id")
     fun delete(vararg id: Int)
 
+    @Query("DELETE FROM autor")
+    fun deleteAll()
+
     @Query("SELECT * FROM autor")
     fun all() : Array<Autor>
 

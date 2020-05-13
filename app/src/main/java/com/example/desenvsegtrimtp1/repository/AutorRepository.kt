@@ -42,4 +42,8 @@ class AutorRepository {
     fun buscarPeloNome(nome : String) : Autor?{
         return LivrariaDatabase.getInstance(contexto).autorDao().search(nome)
     }
+
+    fun deletarTudo(){
+        LivrariaDatabase.getInstance(contexto).autorDao().deleteAll()
+    }
 }

@@ -32,19 +32,21 @@ class LivroActivity : AppCompatActivity() {
 
     fun criarLivroNoBanco()
     {
-        if(!input_nome_livro.toString().isNullOrBlank() && !input_autor_criar_livro.toString().isNullOrBlank())
+        if(!input_nome_livro.text.toString().isNullOrBlank() && !input_autor_criar_livro.text.toString().isNullOrBlank())
         {
-            var autor = AutorRepository.getInstance(this.applicationContext).buscarPeloNome(input_autor_criar_livro.toString())
+            var autor = AutorRepository.getInstance(this.applicationContext).buscarPeloNome(input_autor_criar_livro.text.toString())
             if(autor != null)
             {
-                var livro = Livro(null,input_nome_livro.toString(),autor.id!!)
+                var livro = Livro(null,input_nome_livro.text.toString(),autor.id!!)
                 LivroRepository.getInstance(this.applicationContext).inserirLivro(livro)
 
-                Toast.makeText(this,"Autor inserido!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Livro inserido!", Toast.LENGTH_LONG).show()
 
                 var intent = Intent(this,ListaLivrosActivity::class.java)
                 startActivity(intent)
             }
+            else
+                Toast.makeText(this,"Autor não encontrado!", Toast.LENGTH_LONG).show()
         }
     }
 }
