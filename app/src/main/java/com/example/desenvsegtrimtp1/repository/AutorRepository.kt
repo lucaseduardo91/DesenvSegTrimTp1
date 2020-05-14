@@ -24,6 +24,7 @@ class AutorRepository {
     }
 
     fun deletarAutor(id: Int){
+        LivrariaDatabase.getInstance(contexto).livroDao().deleteAuthorBooks(id)
         LivrariaDatabase.getInstance(contexto).autorDao().delete(id)
     }
 

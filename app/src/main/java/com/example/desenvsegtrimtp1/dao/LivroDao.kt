@@ -23,4 +23,7 @@ interface LivroDao {
 
     @Query("SELECT * FROM livro,autor WHERE livro.autorId = autor.id")
     fun livrosComAutores() : Array<LivroComAutor>
+
+    @Query("DELETE FROM livro WHERE autorId = :autorId")
+    fun deleteAuthorBooks(autorId : Int)
 }
